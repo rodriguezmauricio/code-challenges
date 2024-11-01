@@ -16,19 +16,18 @@ Example:
 wordFrequency("hello world hello everyone");
 // Map { "hello" => 2, "world" => 1, "everyone" => 1 } */
 
-function wordFrequency(str: string): Map<any, any> {
+function wordFrequency(str: string): Map<string, number> {
     const map = new Map();
-    let count = 1;
 
     str.split(" ").forEach((word) => {
-        map.set(word, () => {
-            {
-                word, count === 0 ? 1 : count++;
-            }
-        });
+        if (map.has(word)) {
+            map.set(word, map.get(word) + 1);
+        } else {
+            map.set(word, 1);
+        }
     });
 
-    return map.get(count);
+    return map;
 }
 
 console.log(wordFrequency("hello world hello everyone"));
