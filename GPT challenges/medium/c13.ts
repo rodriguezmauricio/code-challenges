@@ -13,7 +13,7 @@ Return an array of elements that have a frequency greater than n. */
 function findFrequentElements(arr: any[], n: number): any[] {
     const frequencyMap: Record<any, any> = {};
 
-    const returnArr = [];
+    const returnArr: any[] = [];
 
     arr.forEach((element) => {
         frequencyMap[element] = (frequencyMap[element] || 0) + 1;
