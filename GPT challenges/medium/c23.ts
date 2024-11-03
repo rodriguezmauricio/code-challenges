@@ -39,5 +39,6 @@ console.log(
         { name: "apple", category: "fruits" },
         { name: "carrot", category: "vegetables" },
         { name: "banana", category: "fruits" },
+        { name: "lollipop", category: "sweets" },
     ])
 );
