@@ -14,9 +14,17 @@ Return a single array containing all the numbers from the nested structure. */
 function flattenArray(nestedArr: any[]): number[] {
     let flatArray: number[] = [];
 
+    // nestedArr.forEach((element) => {
+    //     if (Array.isArray(element)) {
+    //         flatArray = flatArray.concat(flattenArray(element));
+    //     } else {
+    //         flatArray.push(element);
+    //     }
+    // });
+
     nestedArr.forEach((element) => {
-        if (Array.isArray(element)) {
-            flatArray = flatArray.concat(flattenArray(element));
+        if (element instanceof Array) {
+            flatArray.push(...flattenArray(element));
         } else {
             flatArray.push(element);
         }
