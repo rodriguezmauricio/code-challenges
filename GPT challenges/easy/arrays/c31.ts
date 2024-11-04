@@ -21,4 +21,4 @@ function removeFalsyValues(arr: unknown[]): unknown[] {
     return arr.filter((item) => Boolean(item));
 }
 
-console.log(removeFalsyValues([0, "hello", false, "", 42, null, "world"]));
+console.log(removeFalsyValues([0, "hello", false, "", 42, null, "world", true]));
